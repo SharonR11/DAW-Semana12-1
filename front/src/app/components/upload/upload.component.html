@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="content">
+        <div class="header">
+            <h1>File Upload</h1>
+        </div>
+        <div class="row">
+            <div class="col-med-6"></div>
+            <div class="col-med-6">
+                <form (ngSubmit)="onUpload()" #uploadForm="ngForm" enctype="multipart/form-data">
+                    <div class="input-group mb-3">
+                        <input class="form-control upload" id="formFileLg" type="file" (change)="onFileChange($event)" name="fileUpload" />
+                        <button class="btn btn-outline-secondary" type="submit">
+                            Subir
+                        </button>
+                    </div>
+                </form>
+                <div *ngIf="archivos.length > 0">
+                    <h3>Archivos almacenados:</h3>
+                    <ul>
+                        <li *ngFor="let archivo of archivos">{{ archivo }}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-med-6"></div>
+        </div>
+    </div>
+</div>
